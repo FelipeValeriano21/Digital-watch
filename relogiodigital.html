@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relógio Digital</title>
+</head>
+
+<style>
+
+*{
+
+  margin: 0;
+  padding: 0;
+
+}
+
+body{
+
+  background-color: rgba(7, 56, 77, 0.864);
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+}
+
+.container{
+
+  background-color: rgb(36, 28, 28);
+  height: 200px;
+  width: 720px;
+  position: absolute;
+    top: 40%;
+    transform: translate(0, -50%);
+    border: 5px solid white;
+    box-shadow: 20px -20px rgb(42, 42, 42);
+
+
+}
+
+.hours-box {
+
+  height: 160px;
+  width: 150px;
+  background-color: rgb(53, 53, 53);
+  position: relative;
+  top: 20px;
+  left: 40px;  
+  border: 3px solid white;
+
+}
+
+.minute-box {
+
+height: 160px;
+width: 150px;
+background-color: rgb(53, 53, 53);
+position: relative;
+top: -144px;
+left: 285px;  
+border: 3px solid white;
+}
+
+.second-box {
+
+height: 160px;
+width: 150px;
+background-color: rgb(53, 53, 53);
+position: relative;
+top: -308px;
+left: 520px;  
+border: 3px solid white;
+
+}
+
+#horas{
+
+  font-size: 140px;
+  color: white;
+  position: relative;
+
+}
+
+#minutos{
+
+font-size: 140px;
+color: white;
+position: relative;
+}
+
+#segundos{
+
+font-size: 140px;
+color: white;
+position: relative;
+
+}
+
+
+
+@media (max-width: 700px)
+{
+  .container
+   {
+    width: 470px;
+   }
+}
+
+
+@media (max-width: 700px)
+{
+  .hours-box
+   {
+    width: 100px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  .minute-box
+   {
+    width: 100px;
+    left: 180px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  .second-box
+   {
+    width: 100px;
+    left: 320px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  #horas
+   {
+    font-size: 90px;
+    top: 30px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  #minutos
+   {
+    font-size: 90px;
+    top: 30px;
+    left: 5px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  #segundos
+   {
+    font-size: 90px;
+    top: 30px;
+    left: 4px;
+   }
+}
+
+</style>
+
+<body onload="time()">
+
+  <div class="container">
+
+    <div class="hours-box">
+      <p id="horas"><script>now.getHours();</script></p>
+    </div>
+    <div class="minute-box">
+      <p id="minutos"><script>now.getMinutes();</script></p>
+    </div>
+    <div class="second-box">
+      <p id="segundos"><script>now.getSeconds();</script></p>
+    </div>
+
+  </div>
+  
+
+  <script type="text/javascript">
+    function time()
+    {
+    today=new Date();
+    h=today.getHours();
+    m=today.getMinutes();
+    s=today.getSeconds();
+    document.getElementById('horas').innerHTML= h;
+    document.getElementById('minutos').innerHTML= m;
+    document.getElementById('segundos').innerHTML= s;
+    setTimeout('time()',500);
+    }
+    </script>
+
+</body>
+</html>
